@@ -86,7 +86,7 @@ The dashed actuator path is an architectural pattern, **not an included plug-con
 
 ### Optional: phone presence observer
 
-The presence observer is independent of sensor reception. If you need it, install `systemd/phone-presence-observer.service` and enable it only after pairing the intended phone and setting `N1_BT_DEVICE_ADDRESS`. It observes and requests the AVRCP profile only; it does **not** turn a smart plug on or off. A separate shadow/actuator integration must implement freshness checks, debounce, exact target identity, fault checks, and write/readback verification.
+The presence observer is independent of sensor reception. If you need it, install `systemd/phone-presence-observer.service` and enable it only after pairing the intended phone and setting `PHONE_BT_ADDRESS`. It observes and requests the AVRCP profile only; it does **not** turn a smart plug on or off. A separate shadow/actuator integration must implement freshness checks, debounce, exact target identity, fault checks, and write/readback verification.
 
 ## Tests
 
