@@ -1,0 +1,2 @@
+# Optional Apple Home / HomeKit exposure; kept separate from BLE receiver dependencies.
+HAP-python==5.0.0

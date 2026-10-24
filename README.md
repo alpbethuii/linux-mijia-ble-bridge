@@ -88,6 +88,10 @@ The dashed actuator path is an architectural pattern, **not an included plug-con
 
 The presence observer is independent of sensor reception. If you need it, install `systemd/phone-presence-observer.service` and enable it only after pairing the intended phone and setting `PHONE_BT_ADDRESS`. It observes and requests the AVRCP profile only; it does **not** turn a smart plug on or off. A separate shadow/actuator integration must implement freshness checks, debounce, exact target identity, fault checks, and write/readback verification.
 
+### Optional: Apple Home (without installing Home Assistant)
+
+The optional HomeKit adapter reads the existing local sensor-state JSON and exposes temperature and humidity as two read-only HomeKit accessories. It does not access Bluetooth or bindkeys and cannot control a smart plug. Install it separately with `requirements-homekit.txt`; pairing and mDNS requirements are documented in [`docs/homekit.md`](docs/homekit.md).
+
 ## Tests
 
 The local tests cover the retry policy, error classification, and use of the targeted BlueZ D-Bus profile method. They do not emulate a real radio or claim that every phone/sensor combination is compatible.
